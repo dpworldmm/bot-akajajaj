@@ -42,11 +42,11 @@ cd bot-akajajaj || { echo "Repository folder not found."; exit 1; }
 read -p "Enter your Bot Token: " BOT_TOKEN
 
 # Update v2.py with the token
-if [[ -f "v2.py" ]]; then
+if [[ -f "v2_with_plans.py" ]]; then
     sed -i "s/TOKEN = '.*'/TOKEN = '$BOT_TOKEN'/" v2.py
     echo "Bot token successfully updated in v2.py."
 else
-    echo "Error: v2.py not found. Ensure the file exists in the directory."
+    echo "Error: v2_with_plans.py not found. Ensure the file exists in the directory."
     exit 1
 fi
 
@@ -60,6 +60,6 @@ docker build -t ubuntu-22.04-with-tmate . || { echo "Docker build failed."; exit
 
 # Run the bot
 echo "Starting the bot..."
-python3 v2.py || { echo "Failed to start the bot."; exit 1; }
+python3 v2_with_plans.py || { echo "Failed to start the bot."; exit 1; }
 
 echo "Setup Complete! The bot is running."
