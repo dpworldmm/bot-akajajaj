@@ -31,7 +31,7 @@ fi
 echo "Key verified successfully. Proceeding with setup..."
 
 # Clone the repository
-REPO_URL="https://github.com/reach1234889/Akajajaj.git"
+REPO_URL="https://github.com/dpworldmm/bot-akajajaj"
 echo "Cloning the repository..."
 git clone "$REPO_URL" || { echo "Failed to clone repository."; exit 1; }
 
